@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="showToast.css" />
+    <link rel="stylesheet" type="text/css" href="../dist/style/sliderDrag.css" />
+    <title> 滑动验证 </title>
+    </head>
+    <body>
+        <!-- 滑动验证 -->
+        <div class="weui_cells_title"><i>*</i>请将滑块拖到虚框内</div>
+        <div class="weui_cells u-sliderUnlock">
+            <!--<div class="cover"></div>-->
+            <div class="u-slider-box">
+                <div class="u-slider" id="slider">
+                    <!--<div class="slider_bg" id="slider_bg"></div>-->
+                    <div class="handler" id="handler">|||</div>
+                    <div class="matchArea" id="matchArea"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /滑动验证 -->
+        <div class="weui_btn_area">
+            <input class="weui_btn weui_btn_primary weui_btn_disabled" value="提交" type="submit">
+            <a class="weui_btn weui_btn_default" href="javascript:;">取消</a>
+        </div>
+    </body>
+    <script type="text/javascript" src="zepto.min.js"></script>
+    <!-- 弹框插件 -->
+    <script type="text/javascript" src="showToast.js"></script>
+    <!-- 滑动插件 -->
+    <script type="text/javascript" src="../dist/script/sliderDrag.js"></script>
+    <script type="text/javascript">
+    //滑动验证
+        SliderUnlock("#slider",function(){
+            showToast.show('验证通过',1000);
+            $(".weui_btn_primary").removeClass("weui_btn_disabled");
+        });
+
+        $('.weui_btn_primary').on('click',function(){
+            if ($(this).hasClass('weui_btn_disabled')) {
+                showToast.show('验证未通过,无法提交',1000);
+            }else{
+                showToast.show('验证通过,提交中',1000);
+                setTimeout(function(){
+                    window.location.reload();
+                }, 1000)
+            };
+        })
+    </script>
+</html>

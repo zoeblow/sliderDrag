@@ -1,0 +1,69 @@
+/*
+ * @filename showToast.css
+ * @author fy[2016-05-19 13:31]
+ * @update fy[2016-06-21 17:26]
+ * @version v1.1
+ * @description 显示toast
+ * @基于zepto/jquery
+ */
+
+/*
+* V 1.1 更新 可以配置 时间 如果为空则默认为1500毫秒
+* 2016年6月21日17:26
+* V 1.2 针对IOS系统调整Toast出现位置 
+*/
+.showToast{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 19891014;
+}
+.showToastInner{
+    pointer-events: none;
+    display: table;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.showToastTips{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    top: 180px;
+    width: 100%;
+}
+.showToastTips .showToastCon{
+    display: inline-block;
+    position: relative;
+    background-color:rgba(0,0,0,0.8);
+    background-color:#000\9;
+    filter: alpha(opacity=80);
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    pointer-events: auto;
+    animation-name:fieldTipBounceIn;
+    -webkit-animation-name:fieldTipBounceIn;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .18s;
+    animation-duration: .18s;
+}
+@-webkit-keyframes fieldTipBounceIn{
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
