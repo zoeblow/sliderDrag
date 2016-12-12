@@ -29,6 +29,7 @@
             <input class="weui_btn weui_btn_primary weui_btn_disabled" value="提交" type="submit">
             <a class="weui_btn weui_btn_default" href="javascript:;">取消</a>
         </div>
+        <button id="reset">reset</button>
     </body>
     <script type="text/javascript" src="zepto.min.js"></script>
     <!-- 弹框插件 -->
@@ -37,10 +38,16 @@
     <script type="text/javascript" src="../dist/script/sliderDrag.js"></script>
     <script type="text/javascript">
     //滑动验证
-        SliderUnlock("#slider",function(){
+        SliderUnlock.Slider("#slider",function(){
             showToast.show('验证通过',1000);
             $(".weui_btn_primary").removeClass("weui_btn_disabled");
         });
+
+        $('#reset').click(function(event) {
+            SliderUnlock.Reset("#slider");
+
+        });
+        
 
         $('.weui_btn_primary').on('click',function(){
             if ($(this).hasClass('weui_btn_disabled')) {
