@@ -51,6 +51,7 @@ var SliderUnlock =(function (){
                 eStart = e.touches[0].pageX, //起始位置
                 eLeft = $handler.position().left;  //position left距离
             $handler.on("touchmove",function(e){
+                var e = event || window.event;
                 if ($(this).hasClass('isMatched')) {
                     return false;
                 };
@@ -67,7 +68,7 @@ var SliderUnlock =(function (){
             });
 
             $handler.on("touchend",function(e){
-                var e = event || window.event
+                var e = event || window.event;
                 var eOffsetX = e.changedTouches[0].pageX - eStart,
                         disX = eLeft + eOffsetX,
                         ppLeft = parseInt($matchArea.css('left'));
