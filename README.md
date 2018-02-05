@@ -39,6 +39,7 @@ sliderDrag 是一款移动端的滑动验证控件，防止恶意注册、防机
 ### 参数
 
 SliderUnlock.Slider(id,func)
+
 SliderUnlock.Reset(id,func)
 
 ### API
