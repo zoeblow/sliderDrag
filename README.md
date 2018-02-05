@@ -4,7 +4,7 @@ sliderDrag 是一款移动端的滑动验证控件，防止恶意注册、防机
 
 ### 创建时间 2016-08-19 15:58
 
-#### 作者 [@zoeblow](http://fuyuan.me) [@傀儡 娃娃](http://weibo.com/u/1957474002)
+#### 作者 [@zoeblow](https://github.com/zoeblow/) [@傀儡 娃娃](https://github.com/kuileiwawa)
 
 #### Demo [在线 Demo](http://ifuyuan.wang/gitdemo/sliderDrag/index.html)
 
